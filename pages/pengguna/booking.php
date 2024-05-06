@@ -73,26 +73,26 @@ if (!isset($_SESSION['username'])) {
     <div class="container-fluid bg-dark bg-gradient d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="custom-card">
             <form action="" method="post">
-                <h1 align="center" class="mb-3">Booking Kost</h1>
+                <h1 class="mb-3 text-center text-white">Booking Kost</h1>
                 <?php if ($error != '') : ?>
                     <div class="alert alert-danger"><?php echo $error; ?></div>
                 <?php endif ?>
                 <fieldset>
                     <div class="mb-2">
-                        <input type="teks" name="nama_kost" class="form-control rounded-5" placeholder="Nama Kost" value="<?php echo $kost['nama'] ?>">
+                        <input type="teks" name="nama_kost" class="form-control rounded-5" placeholder="Nama Kost" value="<?php echo $kost['nama'] ?>" readonly>
                     </div>
                     <div class="mb-2">
-                        <input type="text" name="alamat" class="form-control rounded-5" placeholder="Alamat" value="<?php echo $kost['alamat'] ?>">
+                        <input type="text" name="alamat" class="form-control rounded-5" placeholder="Alamat" value="<?php echo $kost['alamat'] ?>" readonly>
                     </div>
                     <div class="mb-2">
-                        <input type="text" name="harga" class="form-control rounded-5" placeholder="Harga/bulan" value="<?php echo $kost['harga_sewa'] ?>">
+                        <input type="text" name="harga" class="form-control rounded-5" placeholder="Harga/bulan" value="<?php echo $kost['harga_sewa'] ?>" readonly>
                     </div>
                 </fieldset>
                 <div class="mb-2">
-                    <input type="number" name="jumlah_bulan" class="form-control rounded-5" placeholder="Jumlah Bulan Sewa">
+                    <input type="number" name="jumlah_bulan" class="form-control rounded-5" placeholder="Jumlah Bulan Sewa" required>
                 </div>
                 <div class="d-grid">
-                    <button type="submit" name="submit" class="btn btn-primary rounded-5 border border-none" style="background-color: #241A10;">Send</button>
+                    <button type="submit" name="submit" class="btn btn-primary rounded-5 border" style="background-color: #241A10;">Send</button>
                 </div>
             </form>
         </div>

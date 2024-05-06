@@ -43,7 +43,7 @@ session_start();
       <p>Kostly hadir bagi anda yang tidak mau repot datang ke tempat kost,
         hanya untuk menanyakan harga dan fasilitas. Dengan menggunakan
         aplikasi ini, pengguna dapat melihat harga dan fasilitas kost secara langsung tanpa perlu datang ke tempat kost.</p>
-        <a href="about.php" class="text-danger text-decoration-none">More about...</a>
+        <a href="about.php" class="text-danger text-decoration-none">More...</a>
     </section>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d9d9d9e6" fill-opacity="1" d="M0,64L60,90.7C120,117,240,171,360,186.7C480,203,600,181,720,154.7C840,128,960,96,1080,96C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
   </div>

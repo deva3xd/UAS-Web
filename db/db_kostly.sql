@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2023 at 05:11 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: May 06, 2024 at 03:48 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,7 +63,9 @@ INSERT INTO `kost` (`id_kost`, `nama`, `alamat`, `jumlah_kamar`, `harga_sewa`, `
 ('k3', 'Kost Campur', 'Surabaya', 8, 1800000, 'kostcampur.png'),
 ('k4', 'Graha Kost', 'Malang', 14, 500000, 'grahakost.png'),
 ('k5', 'Kost Abah Zaini', 'Surabaya', 6, 400000, 'kostabah.png'),
-('k6', 'Kost Putra Putri', 'Kediri', 8, 450000, 'kostpupi.png');
+('k6', 'Kost Putra Putri', 'Kediri', 8, 450000, 'kostpupi.png'),
+('k7', 'Cemara Kost', 'Jakarta Pusat', 6, 1000000, 'cemarakost.jpg'),
+('k8', 'Kost Sejahtra', 'Jakarta Pusat', 7, 1900000, 'kostsejahtra.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,15 +80,17 @@ CREATE TABLE `pengguna` (
   `nama_pengguna` varchar(20) NOT NULL,
   `ttl` varchar(40) NOT NULL,
   `alamat_pengguna` varchar(30) NOT NULL,
-  `no_hp` int(12) NOT NULL
+  `no_hp` int(12) NOT NULL,
+  `role` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pengguna`
 --
 
-INSERT INTO `pengguna` (`id_pengguna`, `username`, `password`, `nama_pengguna`, `ttl`, `alamat_pengguna`, `no_hp`) VALUES
-(6, 'asas', 'asas', 'asas', 'asas', 'asas', 1234567890);
+INSERT INTO `pengguna` (`id_pengguna`, `username`, `password`, `nama_pengguna`, `ttl`, `alamat_pengguna`, `no_hp`, `role`) VALUES
+(6, 'admin', 'admin', 'admin', 'admin', 'admin', 12345, 'admin'),
+(7, 'pelanggan', 'pelanggan', 'pelanggan', 'pelanggan', 'pelanggan', 12345, 'pelanggan');
 
 --
 -- Indexes for dumped tables
@@ -118,7 +122,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pengguna` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

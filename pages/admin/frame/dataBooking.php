@@ -2,7 +2,7 @@
 include '../../../conf/koneksi.php';
 
 session_start();
-// hapuas data
+
 if (isset($_GET['id'])) {
     mysqli_query($conn, "DELETE FROM booking WHERE id_booking='$_GET[id]'");
 

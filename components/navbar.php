@@ -32,7 +32,6 @@
                     $sql = "SELECT nama_pengguna, alamat_pengguna, ttl, no_hp FROM pengguna WHERE username = '$login'";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
-                        // Tampilkan data yang diambil
                         while ($row = $result->fetch_assoc()) {
                             $nama = $row['nama_pengguna'];
                         }

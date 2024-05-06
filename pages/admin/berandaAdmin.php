@@ -1,9 +1,9 @@
 <?php
 session_start();
-// if (!isset($_SESSION['username'])) {
-//   header("Location: ../pengguna/login.php");
-//   exit();
-// }
+if (!isset($_SESSION['username'])) {
+  header("Location: ../pengguna/login.php");
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +22,7 @@ session_start();
     <!-- left -->
     <div style="width: 20%;">
       <div class="col-12">
-        <a class="text-start px-3 btn btn-danger w-100 py-1 rounded-0" href="../pengguna/login.php" role="button">
-          <?php
-          session_destroy();
-          echo "Logout";
-          ?>
-        </a>
+        <a class="text-start px-3 btn btn-danger w-100 py-1 rounded-0" href="../../conf/logout.php" role="button">Logout</a>
       </div>
       <div class="col-12 py-4 text-white" style="background-color: #1a1e22;">
         <h3 align="center">

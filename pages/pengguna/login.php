@@ -6,29 +6,24 @@ $page = 'Login';
 session_start();
 $error = '';
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) { 
     $username = $_POST["username"];
     $password = $_POST["password"];
+    $role     = $_POST["role"];
 
     if (!empty(trim($username)) && !empty(trim($password))) {
-        // username dan password admin
-        $adminuser = 'adminuser';
-        $adminpw   = 'adminpas';
-        if ($username == $adminuser && $password == $adminpw) {
+        $sql = mysqli_query($conn, "SELECT * FROM pengguna WHERE username='$username' and password='$password'");
+        $cek = mysqli_num_rows($sql);
+        if ($cek > 0) {
+            $data = mysqli_fetch_assoc($sql);
             $_SESSION['username'] = $username;
-
-            header("Location: ../admin/berandaAdmin.php");
-        } else {
-            $sql = mysqli_query($conn, "SELECT * FROM pengguna WHERE username='$username' and password='$password'");
-            $cek = mysqli_num_rows($sql);
-            if ($cek > 0) {
-                $data = mysqli_fetch_assoc($sql);
-
-                $_SESSION['username'] = $username;
-                header("Location: home.php");
+            if ($data['role'] == "admin") {
+                header("Location: ../admin/berandaAdmin.php");
             } else {
-                $error = 'Login Gagal!!';
+                header("Location: home.php");
             }
+        } else {
+            $error = 'Login Gagal!!';
         }
     } else {
         $error = 'Data tidak boleh kosong!!';
@@ -64,11 +59,12 @@ if (isset($_POST['submit'])) {
                 <?php endif ?>
                 <div class="mb-3">
                     <label class="fw-light">Username</label>
-                    <input type="text" name="username" class="form-control rounded-5" placeholder="Username">
+                    <input type="text" name="username" class="form-control rounded-5" placeholder="username" required>
                 </div>
                 <div class="mb-3">
                     <label class="fw-light">Password</label>
-                    <input type="password" name="password" class="form-control rounded-5" placeholder="Password">
+                    <input type="password" name="password" class="form-control rounded-5" placeholder="password" required>
+                    <input type="hidden" name="role" value="pelanggan" />
                 </div>
                 <div class="d-grid">
                     <button type="submit" name="submit" class="btn btn-primary rounded-5 border border-none" style="background-color: #241A10;">Login</button>

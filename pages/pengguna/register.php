@@ -19,10 +19,11 @@ if (isset($_POST['submit'])) {
     $ttl      = mysqli_real_escape_string($conn, $ttl);
     $nohp     = stripslashes($_POST['nohp']);
     $nohp     = mysqli_real_escape_string($conn, $nohp);
+    $role     = stripslashes($_POST['role']);
 
-    if (!empty(trim($nama)) && !empty(trim($username)) && !empty(trim($alamat)) && !empty(trim($password)) && !empty(trim($ttl)) && !empty(trim($nohp))) {
+    if (!empty(trim($nama)) && !empty(trim($username)) && !empty(trim($alamat)) && !empty(trim($password)) && !empty(trim($ttl)) && !empty(trim($nohp)) && !empty(trim($role))) {
         $pass   = password_hash($password, PASSWORD_DEFAULT);
-        $sql  = mysqli_query($conn, "INSERT INTO pengguna (username, password, nama_pengguna, ttl, alamat_pengguna, no_hp) VALUES ('$username','$password','$nama','$alamat','$ttl','$nohp')");
+        $sql  = mysqli_query($conn, "INSERT INTO pengguna (username, password, nama_pengguna, ttl, alamat_pengguna, no_hp, role) VALUES ('$username','$password','$nama','$alamat','$ttl','$nohp','$role')");
         if ($sql) {
             $_SESSION['username'] = $username;
             header('Location: login.php');
@@ -33,13 +34,6 @@ if (isset($_POST['submit'])) {
         $error = 'Data tidak boleh kosong!!';
     }
 }
-
-// function cek_nama($username, $conn)
-// {
-//     $nama = mysqli_real_escape_string($conn, $username);
-//     $sql = "SELECT * FROM pengguna WHERE username = '$nama'";
-//     if ($result = mysqli_query($conn, $sql)) return mysqli_num_rows($result);
-// }
 ?>
 
 <!DOCTYPE html>
@@ -70,27 +64,28 @@ if (isset($_POST['submit'])) {
                 <?php endif ?>
                 <div class="mb-2">
                 <label class="fw-light">Username</label>
-                    <input type="text" name="username" class="form-control rounded-5" placeholder="Username">
+                    <input type="text" name="username" class="form-control rounded-5" placeholder="username" required>
                 </div>
                 <div class="mb-2">
                 <label class="fw-light">Password</label>
-                    <input type="password" name="password" class="form-control rounded-5" placeholder="Password">
+                    <input type="password" name="password" class="form-control rounded-5" placeholder="password" required>
                 </div>
                 <div class="mb-2">
                 <label class="fw-light">Nama</label>
-                    <input type="text" name="nama" class="form-control rounded-5" placeholder="Nama">
+                    <input type="text" name="nama" class="form-control rounded-5" placeholder="nama" required>
                 </div>
                 <div class="mb-2">
                 <label class="fw-light">Alamat</label>
-                    <input type="text" name="alamat" class="form-control rounded-5" placeholder="Alamat">
+                    <input type="text" name="alamat" class="form-control rounded-5" placeholder="alamat" required>
                 </div>
                 <div class="mb-2">
-                <label class="fw-light">Tempat dan Tgl Lahir</label>
-                    <input type="text" name="ttl" class="form-control rounded-5" placeholder="Tempat dan Tgl Lahir">
+                <label class="fw-light">Tempat Tgl Lahir</label>
+                    <input type="text" name="ttl" class="form-control rounded-5" placeholder="tempat tanggal lahir" required>
                 </div>
                 <div class="mb-3">
                 <label class="fw-light">No. Handphone</label>
-                    <input type="text" name="nohp" class="form-control rounded-5" placeholder="No. Handphone">
+                    <input type="text" name="nohp" class="form-control rounded-5" placeholder="no. handphone" required>
+                    <input type="hidden" name="role" value="pelanggan" />
                 </div>
                 <div class="d-grid">
                     <button type="submit" name="submit" class="btn btn-primary rounded-5 border border-none" style="background-color: #241A10;">Register</button>

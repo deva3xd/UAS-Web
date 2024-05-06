@@ -26,28 +26,26 @@ session_start();
     <!-- navbar end -->
 
     <!-- list kost -->
-    <div class="container-xxl bg-dark bg-gradient px-0 mt-5">
-        <div class="container text-center p-5">
-            <div class="row">
+    <div class="container-xxl bg-dark bg-gradient mt-5 p-5">
+            <div class="row d-flex justify-content-center">
                 <?php
                 include('../../conf/koneksi.php');
                 $query = mysqli_query($conn, "SELECT * FROM kost");
 
                 while ($row = mysqli_fetch_assoc($query)) :
                 ?>
-                    <div class="col-4">
-                        <div class="card m-2">
-                            <img src="../../assets/img/<?php echo $row['gambar']; ?>" class="card-img-top" alt="Gambar Kost" height="220px">
+                    <div class="col-3 my-2">
+                        <div class="card h-100 text-center">
+                            <img src="../../assets/img/<?php echo $row['gambar']; ?>" class="card-img-top" alt="<?php echo $row['nama'] ?>" height="200px">
                             <div class="card-body">
                                 <h5 class="card-title"><b><?php echo $row['nama']; ?></b></h5>
                                 <p class="card-text" style="text-align: left;">Lokasi: <?php echo $row['alamat']; ?><br />
-                                    Jumlah Kamar: <?php echo $row['jumlah_kamar']; ?><br />Harga Sewa: <?php echo $row['harga_sewa']; ?></p>
-                                <?php echo '<a class="btn btn-primary border border-black" href="./booking.php?id_kost=' . $row['id_kost'] . '">Booking</a>' ?>
+                                    Jumlah Kamar: <?php echo $row['jumlah_kamar']; ?><br />Harga Sewa: Rp. <?php echo $row['harga_sewa']; ?></p>
+                                <?php echo '<a class="btn btn-primary" href="./booking.php?id_kost=' . $row['id_kost'] . '">Booking</a>' ?>
                             </div>
                         </div>
                     </div>
                 <?php endwhile; ?>
-            </div>
         </div>
     </div>
     <!-- list kost end -->
