@@ -9,7 +9,6 @@ $error = '';
 if (isset($_POST['submit'])) { 
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $role     = $_POST["role"];
 
     if (!empty(trim($username)) && !empty(trim($password))) {
         $sql = mysqli_query($conn, "SELECT * FROM pengguna WHERE username='$username' and password='$password'");
@@ -20,7 +19,7 @@ if (isset($_POST['submit'])) {
             if ($data['role'] == "admin") {
                 header("Location: ../admin/berandaAdmin.php");
             } else {
-                header("Location: home.php");
+                header("Location: ../pengguna/home.php");
             }
         } else {
             $error = 'Login Gagal!!';
@@ -52,7 +51,7 @@ if (isset($_POST['submit'])) {
             <form action="" method="post">
                 <div class="d-flex justify-content-between">
                     <h1 class="mb-3"><u>Login</u></h1>
-                    <a href="./home.php" class="btn btn-danger btn-sm d-flex align-items-center my-3">Kembali</a>
+                    <a href="../pengguna/home.php" class="btn btn-danger btn-sm d-flex align-items-center my-3">Kembali</a>
                 </div>
                 <?php if ($error != '') : ?>
                     <div class="alert alert-danger"><?php echo $error; ?></div>
@@ -64,7 +63,6 @@ if (isset($_POST['submit'])) {
                 <div class="mb-3">
                     <label class="fw-light">Password</label>
                     <input type="password" name="password" class="form-control rounded-5" placeholder="password" required>
-                    <input type="hidden" name="role" value="pelanggan" />
                 </div>
                 <div class="d-grid">
                     <button type="submit" name="submit" class="btn btn-primary rounded-5 border border-none" style="background-color: #241A10;">Login</button>

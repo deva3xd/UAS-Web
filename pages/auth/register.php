@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
             <form action="" method="post">
             <div class="d-flex justify-content-between">
                     <h1 class="mb-3"><u>Register</u></h1>
-                    <a href="./home.php" class="btn btn-danger btn-sm d-flex align-items-center my-3">Kembali</a>
+                    <a href="../pengguna/home.php" class="btn btn-danger btn-sm d-flex align-items-center my-3">Kembali</a>
                 </div>
                 <?php if ($error != '') : ?>
                     <div class="alert alert-danger"><?php echo $error; ?></div>
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="mb-3">
                 <label class="fw-light">No. Handphone</label>
-                    <input type="text" name="nohp" class="form-control rounded-5" placeholder="no. handphone" required>
+                    <input type="number" name="nohp" class="form-control rounded-5" placeholder="no. handphone" required>
                     <input type="hidden" name="role" value="pelanggan" />
                 </div>
                 <div class="d-grid">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 06, 2024 at 03:48 PM
+-- Generation Time: May 11, 2024 at 02:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,6 +38,13 @@ CREATE TABLE `booking` (
   `no_telp` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`id_booking`, `nama_kost`, `alamat_kost`, `harga_sewa`, `jumlah_bulan`, `total_harga`, `nama_pengguna`, `no_telp`) VALUES
+('398', 'Wisma Griya Arista', 'Depok', 350000, 1, 350000, 'pelanggan', 12345);
+
 -- --------------------------------------------------------
 
 --
@@ -60,7 +67,7 @@ CREATE TABLE `kost` (
 INSERT INTO `kost` (`id_kost`, `nama`, `alamat`, `jumlah_kamar`, `harga_sewa`, `gambar`) VALUES
 ('k1', 'Wisma Griya Arista', 'Depok', 7, 350000, 'griyakost.png'),
 ('k2', 'Inara Kost', 'Sidoarjo', 10, 550000, 'inarakost.png'),
-('k3', 'Kost Campur', 'Surabaya', 8, 1800000, 'kostcampur.png'),
+('k3', 'Kost Campur', 'Surabaya', 7, 1800000, 'kostcampur.png'),
 ('k4', 'Graha Kost', 'Malang', 14, 500000, 'grahakost.png'),
 ('k5', 'Kost Abah Zaini', 'Surabaya', 6, 400000, 'kostabah.png'),
 ('k6', 'Kost Putra Putri', 'Kediri', 8, 450000, 'kostpupi.png'),
@@ -122,7 +129,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pengguna` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,7 +5,7 @@ $page = "Booking Kost";
 
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php"); // Pengguna tidak login, arahkan ke halaman login
+    header("Location: ../auth/login.php"); // Pengguna tidak login, arahkan ke halaman login
     exit();
 } else {
     $login = $_SESSION['username'];
@@ -47,8 +47,6 @@ if (!isset($_SESSION['username'])) {
         }
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>

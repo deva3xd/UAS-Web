@@ -31,19 +31,19 @@ if (isset($_POST['submit'])) {
         <form action="" method="post">
             <div class="mb-3">
                 <label class="form-label">Nama</label>
-                <input type="text" name="nama" value="<?php echo $data['nama_pengguna']; ?>" class="form-control">
+                <input type="text" name="nama" value="<?php echo $data['nama_pengguna']; ?>" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Alamat</label>
-                <input type="text" name="alamat" value="<?php echo $data['alamat_pengguna']; ?>" class="form-control">
+                <input type="text" name="alamat" value="<?php echo $data['alamat_pengguna']; ?>" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Ttl</label>
-                <input type="text" name="ttl" value="<?php echo $data['ttl']; ?>" class="form-control">
+                <input type="text" name="ttl" value="<?php echo $data['ttl']; ?>" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">No Handphone</label>
-                <input type="text" name="nohp" value="<?php echo $data['no_hp']; ?>" class="form-control">
+                <input type="text" name="nohp" value="<?php echo $data['no_hp']; ?>" class="form-control" required>
             </div>
             <div class="d-grid">
                 <button type="submit" name="submit" class="btn btn-primary border border-black">Edit</button>

@@ -47,23 +47,23 @@ if (isset($_POST['submit'])) {
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">Nama Kost</label>
-                <input type="text" name="nama" value="<?php echo $data['nama']; ?>" class="form-control">
+                <input type="text" name="nama" value="<?php echo $data['nama']; ?>" class="form-control" require>
             </div>
             <div class="mb-3">
                 <label class="form-label">Alamat Kost</label>
-                <input type="text" name="alamat" value="<?php echo $data['alamat']; ?>" class="form-control">
+                <input type="text" name="alamat" value="<?php echo $data['alamat']; ?>" class="form-control" require>
             </div>
             <div class="mb-3">
                 <label class="form-label">Jumlah Kamar</label>
-                <input type="text" name="jumlah" value="<?php echo $data['jumlah_kamar']; ?>" class="form-control">
+                <input type="text" name="jumlah" value="<?php echo $data['jumlah_kamar']; ?>" class="form-control" require>
             </div>
             <div class="mb-3">
                 <label class="form-label">Harga</label>
-                <input type="text" name="harga" value="<?php echo $data['harga_sewa']; ?>" class="form-control">
+                <input type="text" name="harga" value="<?php echo $data['harga_sewa']; ?>" class="form-control" require>
             </div>
             <div class="mb-3">
                 <label class="form-label">Gambar</label>
-                <input type="file" name="gambar" id="gambar" class="form-control">
+                <input type="file" name="gambar" id="gambar" class="form-control" require>
             </div>
             <div class="d-grid">
                 <button type="submit" name="submit" class="btn btn-primary border border-black">Edit</button>

@@ -23,7 +23,7 @@
                         </button>
                         <ul class="dropdown-menu bg-primary dropdown-menu-end">
                             <li>
-                                <a href="login.php" class="dropdown-item bg-primary text-white">Login</a>
+                                <a href="../auth/login.php" class="dropdown-item bg-primary text-white">Login</a>
                             </li>
                         </ul>
                     </div>';
